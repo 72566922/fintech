@@ -1,0 +1,302 @@
+
+body {
+    gap: 2rem;
+    padding: 3rem;
+    margin-top: 4.5rem;
+    background-color: rgba(20, 111, 180, 0.822); /* Transparente */
+
+    font-family: "Faculty Glyphic", sans-serif;
+     
+}
+/* --- Estilos para la portada con imagen de fondo --- */
+.portada {
+    position: static;
+    background-image: url('/img/portada.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.portada-content {
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 10rem;
+}
+
+.portada h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.portada p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.explorar-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #494a43;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.explorar-btn:hover {
+    background-color: #ffffffc3;
+}
+
+/* Sección Sobre Nosotros */
+.sobre-nosotros {
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contenido {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contenido:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.texto {
+    background-color: #71716b4c;
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.imagen {
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .contenido {
+        flex-direction: column;
+    }
+
+    .contenido:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .imagen {
+        width: 100%;
+    }
+}
+
+/* Sección Sobre Nosotros */
+.sobre-nosotros {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateY(50px); /* Desplazamiento inicial */
+    animation: fadeInUp 1s ease-in-out forwards; /* Animación */
+}
+
+.contenido:nth-child(2) {
+    animation-delay: 0.3s; /* Retraso para el segundo contenedor */
+}
+
+.contenido:nth-child(3) {
+    animation-delay: 0.6s; /* Retraso para el tercer contenedor */
+}
+
+.texto {
+    text-align: center;
+    max-width: 90%px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 251, 251, 0.489); /* Transparente */
+    color: #333;
+}
+
+.texto h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #666666; /* Azul atractivo */
+}
+
+.texto p {
+
+    text-align: center;
+    line-height: 2rem;
+    font-size: 16px;
+    color: #000000b1;
+}
+
+.imagen {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación para hacer que aparezca suavemente */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido {
+        flex-direction: column;
+        gap: 30px; /* Más espacio cuando los bloques están en columna */
+    }
+
+    .contenido:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .contenido:nth-child(2) {
+        flex-direction: column; /* En dispositivos pequeños, el bloque central también se apila */
+    }
+
+    .imagen {
+        width: 100%;
+        margin: 0; /* Elimina márgenes para pantallas pequeñas */
+    }
+}
+
+
+/* --- Estilos para el formulario de contacto --- */
+.contacto {
+    padding: 40px 20px;
+    background-color: #0f0f3d83;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #979aa7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #fffff762;
+}
+
+/* --- Estilos para el footer --- */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Media Queries para Responsividad --- */
+
+/* Ajustes para dispositivos más pequeños (móviles y tabletas) */
+@media (max-width: 768px) {
+    /* Portada */
+    .portada {
+        height: 400px; /* Reduce la altura en dispositivos más pequeños */
+        padding: 10px;
+    }
+
+    .portada h1 {
+        font-size: 30px;
+    }
+
+    .portada p {
+        font-size: 14px;
+    }
+
+    /* Ajustar el contenido del formulario */
+    .contact-form {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+    }
+
+}
+

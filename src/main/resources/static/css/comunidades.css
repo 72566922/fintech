@@ -1,0 +1,201 @@
+
+body {
+
+    margin-top: 4.5rem;
+    font-family: "Faculty Glyphic", sans-serif;
+     
+}
+.portada {
+    
+    position: static;
+    background-image: url('https://img.freepik.com/foto-gratis/concepto-collage-reconocimiento-facial_23-2150038897.jpg?t=st=1731893887~exp=1731897487~hmac=4bdb396a6c5eabdb15ee9856fc485e6e1a51a904efda2f1b301bc75d86c4f744&w=1380'); 
+    background-size: cover;
+    background-position: top center; /* Mueve la imagen ligeramente hacia abajo */
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido hacia la derecha */
+    color: rgb(255, 255, 255);
+    padding-top: 60px; /* Agrega espacio superior al contenido sin cortar la imagen */
+    padding: 40px 20px 20px; 
+}
+
+.portada-content {
+    max-width: 600px;
+    padding: 20px;
+    margin-left: 80px; /* Espacio desde el borde derecho */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.portada h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.portada p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+
+    text-align: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+/* Sección de Comunidad */
+.community {
+    background-color: #fffefe;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem;
+   
+}
+
+.community-block {
+    background-color: #43f0542c;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Título de la comunidad */
+.community-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* Descripción de la comunidad */
+.community-description {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+/* Botón de acción */
+.join-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: #16a085;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.join-btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Estilos de Responsive */
+@media (max-width: 768px) {
+    .community {
+        grid-template-columns: 1fr; 
+        padding: 2rem;
+    }
+    
+    .community-block {
+        margin-bottom: 1rem;
+    }
+}
+
+/* --- Sección Noticias --- */
+#news {
+    background-color: #d1eb4c75;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+#news h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.news-card {
+    min-width: none;
+    background-color: #706f6f5b;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card .content {
+    padding: 1.5rem;
+}
+
+.news-card .content h3 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-family: "Rubik", sans-serif;
+}
+
+.news-card .content p {
+    color: #000000;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.news-card .content .date {
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.news-card .content .read-more {
+    text-decoration: none;
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.news-card .content .read-more:hover {
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #news h2 {
+        font-size: 2rem;
+    }
+
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+}

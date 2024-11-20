@@ -1,0 +1,129 @@
+.portada {
+    gap: 2rem;
+    padding: 3rem;
+    margin-top: 4.5rem;
+    position: static;
+    background-image: url('/img/business-successful-asian-businesswoman-with-grey-hair-drinking-coffee-standing-with-laptop-look.jpg'); 
+    background-size: cover;
+    background-position: top center; /* Mueve la imagen ligeramente hacia abajo */
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea el contenido hacia la derecha */
+    color: rgba(0, 0, 0, 0.795);
+    padding-top: 60px; /* Agrega espacio superior al contenido sin cortar la imagen */
+    padding: 40px 20px 20px; 
+}
+
+.portada-content {
+    max-width: 600px;
+    padding: 20px;
+    margin-right: 80px; 
+    text-align: center;
+    border-radius: 10px;
+}
+
+.portada h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.portada p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+
+
+/* Sección de Eventos */
+.events-section {
+    gap: 2rem;
+    padding: 3rem;
+    background-color: #838282c3; 
+    text-align: center;
+}
+
+.events-title {
+   
+    font-size: 2.5rem;
+    color: #fff9f9;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* Contenedor de Eventos */
+.events-list {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+
+/* Elemento de Evento */
+.event-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;/* Amplitud máxima */
+    text-align: center;
+    gap: 1rem;
+}
+
+/* Imagen Circular */
+.event-image {
+    width: 200px; 
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 50%; 
+    display: block;
+    border: none;
+}
+
+/* Contenido del Evento */
+.event-content {
+    text-align: center;
+}
+
+/* Título del Evento */
+.event-title {
+    align-items: center;
+    font-size: 1.8rem; 
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+/* Descripción */
+.event-description {
+    margin: auto;
+    max-width: 400px;
+    font-size: 1.2rem; 
+    color: #fff9f9;
+    margin-bottom: 1rem;
+}
+
+/* Botón */
+.event-btn {
+    padding: 0.8rem 2rem; 
+    background-color: #007bff84;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.event-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .events-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-item {
+        margin-bottom: 2rem;
+    }
+}

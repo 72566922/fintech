@@ -1,0 +1,172 @@
+/* --- Sección General --- */
+.portada {
+    padding: 3rem;
+    margin-top: 4.5rem;
+    position: static;
+    background-image: url('/img/smart-professional-female-architect-industrial-woman-suit-thinking-about-solution-looking-upper-l.jpg'); 
+    background-size: cover;
+    background-position: top center; /* Mueve la imagen ligeramente hacia abajo */
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between; 
+    color: rgb(0, 0, 0);
+    padding-top: 60px; /* Agrega espacio superior al contenido sin cortar la imagen */
+    padding: 40px 20px 20px; 
+}
+
+.portada-content {
+    max-width: 600px;
+    text-align: center;
+
+    padding: 20px;
+    margin-right: 80px; 
+    display: flex;
+    border-radius: 10px;
+}
+
+.portada h1 {
+    font-size: 60px;
+    margin: 0 250px;
+}
+
+
+
+.estudios-formacion-section {
+    background-color: #363535;
+    text-align: center;
+ 
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #f6eded;
+    margin-bottom: 3rem;
+}
+
+.subsection-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #f4f1f1;
+    text-align: center;
+}
+
+/* --- Estudios --- */
+.estudios-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.estudio-item {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.estudio-item:hover {
+    transform: scale(1.05);
+}
+
+.estudio-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.estudio-content {
+    margin-top: 15px;
+}
+
+.estudio-btn {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.estudio-btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- Formación --- */
+.formacion-container {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.formacion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.formacion-item:hover {
+    transform: scale(1.05);
+}
+
+.formacion-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.formacion-content {
+    margin-top: 15px;
+}
+
+.formacion-title {
+    font-size: 1.5rem;
+}
+
+.formacion-btn {
+    margin-top: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formacion-btn:hover {
+    background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .estudios-container, .formacion-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .estudio-item, .formacion-item {
+        width: 90%;
+    }
+}
