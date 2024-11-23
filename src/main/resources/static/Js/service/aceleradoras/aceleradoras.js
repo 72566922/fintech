@@ -5,6 +5,7 @@ const apiUrlAceleradoras = "http://localhost:8080/api/events/by/4";
 const imageExtensionsAceleradoras = [".png", ".jpeg", ".jpg", ".webp"];
 
 // Función para obtener los eventos desde la API
+// Función para obtener los eventos desde la API
 async function fetchEventosAceleradoras() {
   try {
     const response = await fetch(apiUrlAceleradoras);
@@ -14,11 +15,34 @@ async function fetchEventosAceleradoras() {
     }
 
     const eventos = await response.json();
+
+    // Ordena los eventos por fecha (menor a mayor) y luego por hora de inicio
+    eventos.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+      // Comparación por fecha
+      if (dateA - dateB !== 0) {
+        return dateA - dateB;
+      }
+
+      // Comparación por hora de inicio si las fechas son iguales
+      const timeA = a.timeStart.split(":").map(Number); // Convierte "HH:mm" a [HH, mm]
+      const timeB = b.timeStart.split(":").map(Number);
+
+      // Comparación de horas y minutos
+      return timeA[0] - timeB[0] || timeA[1] - timeB[1];
+    });
+
+    console.log("Eventos ordenados por fecha y hora:", eventos);
+
+    // Renderiza los eventos
     renderEventosAceleradoras(eventos);
   } catch (error) {
     console.error("Hubo un problema al obtener los eventos de aceleradoras:", error);
   }
 }
+
 
 // Función para verificar qué extensión de imagen está disponible
 async function fetchImageWithFallbackAceleradoras(basePath) {

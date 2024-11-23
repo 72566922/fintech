@@ -25,7 +25,27 @@ async function fetchEventos() {
 
     // Convierte la respuesta a JSON
     const eventos = await response.json();
-    console.log("Eventos obtenidos:", eventos);
+    console.log("Eventos obtenidos antes de ordenar:", eventos);
+
+    // Ordena los eventos por fecha (menor a mayor) y luego por hora de inicio
+    eventos.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+      // Comparación por fecha
+      if (dateA - dateB !== 0) {
+        return dateA - dateB;
+      }
+
+      // Comparación por hora de inicio si las fechas son iguales
+      const timeA = a.timeStart.split(":").map(Number); // Convierte "HH:mm" a [HH, mm]
+      const timeB = b.timeStart.split(":").map(Number);
+
+      // Comparación de horas y minutos
+      return timeA[0] - timeB[0] || timeA[1] - timeB[1];
+    });
+
+    console.log("Eventos ordenados por fecha y hora:", eventos);
 
     // Llama a la función para renderizar los eventos
     renderEventos(eventos);
@@ -37,6 +57,8 @@ async function fetchEventos() {
     console.error("Hubo un problema al obtener los eventos:", error);
   }
 }
+
+
 
 // Función para llenar el select de tipos de eventos con los IDs
 function fillEventTypeFilter(eventos) {
@@ -129,6 +151,7 @@ async function renderEventos(eventos) {
 }
 
 // Función para filtrar los eventos por ID de tipo de evento
+// Función para filtrar los eventos por ID de tipo de evento
 async function fetchEventosByTypeId(id) {
   console.log("Filtrando eventos por tipo de ID:", id);
 
@@ -137,13 +160,38 @@ async function fetchEventosByTypeId(id) {
     if (!response.ok) {
       throw new Error(`Error al obtener eventos filtrados por tipo con ID: ${response.statusText}`);
     }
+
     const eventos = await response.json();
-    console.log("Eventos filtrados:", eventos);
+    console.log("Eventos obtenidos antes de ordenar:", eventos);
+
+    // Ordena los eventos por fecha (menor a mayor) y luego por hora de inicio
+    eventos.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+      // Comparación por fecha
+      if (dateA - dateB !== 0) {
+        return dateA - dateB;
+      }
+
+      // Comparación por hora de inicio si las fechas son iguales
+      const timeA = a.timeStart.split(":").map(Number); // Convierte "HH:mm" a [HH, mm]
+      const timeB = b.timeStart.split(":").map(Number);
+
+      // Comparación de horas y minutos
+      return timeA[0] - timeB[0] || timeA[1] - timeB[1];
+    });
+
+    console.log("Eventos filtrados y ordenados:", eventos);
+
+    // Renderiza los eventos filtrados
     renderEventos(eventos);
+
   } catch (error) {
     console.error("Hubo un problema al obtener eventos filtrados por ID:", error);
   }
 }
+
 
 // Agrega el evento al select de tipo de evento
 document.getElementById("eventTypeFilter").addEventListener("change", (e) => {

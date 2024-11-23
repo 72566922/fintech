@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos - Fintech Formación</title>
-    
-    
+
+
     <!-- Estilo específico para el Header -->
     <link rel="stylesheet" href="../css/global.css">
 
@@ -13,15 +14,23 @@
 
 
 </head>
+
 <body>
 
     <header>
         <div class="menu">
-            <img src="https://fintechperu.com/wp-content/uploads/2023/11/logo-fintech-peru-03.png" alt="Logo Fintech" class="logo" />
+            <img src="https://fintechperu.com/wp-content/uploads/2023/11/logo-fintech-peru-03.png" alt="Logo Fintech"
+                class="logo" />
             <nav>
                 <ul class="menu-list">
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/eventos">Eventos</a></li>
+                    <li class="submenu">
+                        <a href="/publicaciones">Publicaciones</a>
+                        <ul class="submenu-list">
+                            <li><a href="/Secciones/comunidad.html#news">Publicar</a></li>
+                        </ul>
+                    </li>
                     <li class="submenu">
                         <a href="/aceleradoras">Aceleradoras</a>
                         <ul class="submenu-list">
@@ -29,17 +38,13 @@
                         </ul>
                     </li>
                     <li class="submenu">
-                        <a href="/estudios">Estudios</a>
+                        <a href="/concursos">Concursos</a>
                         <ul class="submenu-list">
-                            <li><a href="/Secciones/estudios.html#formacion">Formación</a></li>
+                            <li><a href="/Secciones/concursos.html#formacion">Formación</a></li>
                         </ul>
                     </li>
-                    <li class="submenu">
-                        <a href="/comunidad">Comunidades</a>
-                        <ul class="submenu-list">
-                            <li><a href="/Secciones/comunidad.html#news">Noticias</a></li>
-                        </ul>
-                    </li>
+                    <li class="submenu"><a href="/cursos">Cursos</a></li>
+                    <li class="submenu"><a href="/noticias">Noticias</a></li>
                 </ul>
             </nav>
             <form class="search-form" id="searchForm">
@@ -51,26 +56,27 @@
     <section class="portada">
         <div class="portada-content">
             <h1>Eventos</h1>
-            <p id="typing-effect">Conecta, aprende y crece en nuestros eventos de innovación financiera y empoderamiento femenino. ¡Únete al cambio!</p>
-            
+            <p id="typing-effect">Conecta, aprende y crece en nuestros eventos de innovación financiera y empoderamiento
+                femenino. ¡Únete al cambio!</p>
+
         </div>
     </section>
     <!-- Contenido de la sección de eventos -->
 
     <section class="events-section">
         <h2 class="events-title">Próximos</h2>
-        
+
         <label for="eventTypeFilter">Filtrar por tipo:</label>
         <select id="eventTypeFilter">
             <option value="">Seleccionar tipo</option>
             <!-- Las opciones se llenarán dinámicamente con JavaScript -->
         </select>
-    
+
         <div class="events-list" id="eventos-container">
             <!-- Los eventos se mostrarán aquí -->
         </div>
     </section>
-    
+
 
     <footer>
         <div class="footer-content">
@@ -101,7 +107,9 @@
             <div class="social-icons">
                 <a href="#"><img src="/img/L-redes/facebook.png" alt="Facebook"></a>
                 <a href="#"><img src="/img/L-redes/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png" alt="Instagram"></a>
+                <a href="#"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"
+                        alt="Instagram"></a>
                 <a href="#"><img src="./img/L-redes/linkedin.png" alt="LinkedIn"></a>
             </div>
             <p>&copy; 2024 Fintech Mujeres Perú. Todos los derechos reservados.</p>
@@ -111,4 +119,5 @@
         <script src="/Js/service/type.js"></script>
     </footer>
 </body>
+
 </html>

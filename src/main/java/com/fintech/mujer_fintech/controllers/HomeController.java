@@ -17,19 +17,34 @@ public class HomeController {
         return "/Secciones/eventos";
     }
 
-
-    @GetMapping("/estudios")
+    @GetMapping("/concursos")
     public String mostrarEstudios() {
-        return "/Secciones/estudios";
+        return "/Secciones/concursos";
     }
 
-    @GetMapping("/comunidad")
-    public String mostrarComunidad() {
-        return "/Secciones/comunidad";
+    @GetMapping("/cursos")
+    public String mostrarCursos() {
+        return "/Secciones/cursos";
     }
+
     @GetMapping("/aceleradoras")
     public String mostrarAceleradoras() {
         return "/Secciones/aceleradoras";
+    }
+
+    @GetMapping("/publicaciones")
+    public String mostrarPublicaciones() {
+        return "/Secciones/publicaciones";
+    }
+
+    @GetMapping("/noticias")
+    public String mostrarNoticias() {
+        return "/Secciones/noticias";
+    }
+
+    @GetMapping("/imagenes")
+    public String mostrarImagenes() {
+        return "/Secciones/imagen";
     }
 
 }

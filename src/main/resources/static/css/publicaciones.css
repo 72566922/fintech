@@ -1,0 +1,177 @@
+/* Estilo general */
+body {
+
+    margin-top: 4.5rem;
+    font-family: "Faculty Glyphic", sans-serif;
+     
+}
+.portada {
+    
+    position: static;
+    background-image: url('https://img.freepik.com/foto-gratis/nina-responde-llamada-extrana-extrana-recibe-mensaje-perturbador-loco-estremece-duda-disgusta-sonrie_1258-137555.jpg?t=st=1732231037~exp=1732234637~hmac=3a1ec4e8ab696f65d4c9810b9790d7f6c5419cbffc7f7bddf6f6714b5758619d&w=1380'); 
+    background-size: cover;
+    background-position: top center; /* Mueve la imagen ligeramente hacia abajo */
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea el contenido hacia la derecha */
+    color: rgb(255, 255, 255);
+    padding-top: 60px; /* Agrega espacio superior al contenido sin cortar la imagen */
+    padding: 40px 20px 20px; 
+}
+.portada-content {
+    max-width: 600px;
+    padding: 20px;
+    margin-left: 80px; /* Espacio desde el borde derecho */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.portada h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.portada p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+
+    text-align: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+  
+  .post-section {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-section h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .post-form input[type="text"],
+  .post-form input[type="file"],
+  .post-form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+  }
+  
+  .post-form button {
+    background-color: #000000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .post-form button:hover {
+    background-color: #b9bf45;
+  }
+  
+  .posts-container {
+    margin-top: 20px;
+  }
+  
+  .post {
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .post h3 {
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .reactions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .reactions button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .reactions button:hover {
+    background-color: #007bff;
+  }
+  
+  .reactions span {
+    font-size: 16px;
+  }
+  
+  .reactions button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  /* Estilo para comentarios */
+.comment-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .comment-form input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .comment-form button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .comment-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .comment-list {
+    margin-top: 10px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .comment-list li {
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
