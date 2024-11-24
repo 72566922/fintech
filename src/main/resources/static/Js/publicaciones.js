@@ -3,8 +3,8 @@ const apiUrlPublicationsSave = "http://localhost:8080/api/publications/save";
 const apiUrlComments = "http://localhost:8080/api/comentarios";
 const apiUrlCommentsSave = "http://localhost:8080/api/comentarios/save";
 const apiUrlImagesUpload = "http://localhost:8080/api/imagenes/subir";
+const apiUrlReaccionSave = "http://localhost:8080/api/reacciones/save";
 
-// Subir una imagen y publicar junto con ella
 // Subir una imagen y publicar junto con ella
 function subirImagenYPublicacion(event) {
   event.preventDefault(); // Evitar que el formulario se envíe de forma convencional
@@ -86,50 +86,7 @@ function subirImagenYPublicacion(event) {
     });
 }
 
-// Cargar publicaciones y comentarios
-document.addEventListener("DOMContentLoaded", function () {
-  fetch(apiUrlPublications)
-    .then((response) => response.json())
-    .then((publications) => {
-      const postsContainer = document.getElementById("postsContainer");
 
-      publications.forEach((publication) => {
-        const post = document.createElement("div");
-        post.classList.add("post");
-        post.dataset.id = publication.id;
-
-        post.innerHTML = `
-          <h3>${publication.title}</h3>
-          <h3>${publication.user.username}</h3>
-          <img src="${publication.nameImg.url}" alt="${publication.title}">
-          <div class="reactions">
-            <button class="reaction-btn" data-reaction="like">Me gusta</button>
-            <span class="like-count">(${publication.meGusta})</span>
-            <button class="reaction-btn" data-reaction="dislike">No me gusta</button>
-            <span class="dislike-count">(${publication.noMeGusta})</span>
-            <button class="reaction-btn" data-reaction="love">Me encanta</button>
-            <span class="love-count">(${publication.meEncanta})</span>
-          </div>
-          <div class="comments">
-            <h4>Comentarios:</h4>
-            <ul class="comment-list" id="commentList-${publication.id}">
-              <li>Cargando comentarios...</li>
-            </ul>
-            <form class="comment-form" data-id="${publication.id}">
-              <input type="text" class="new-comment" placeholder="Escribe un comentario..." required>
-              <button type="submit">Enviar</button>
-            </form>
-          </div>
-        `;
-
-        postsContainer.prepend(post);
-
-        // Cargar los comentarios de la publicación
-        loadComments(publication.id);
-      });
-    })
-    .catch((error) => console.error("Error al cargar publicaciones:", error));
-});
 
 
 // Cargar publicaciones y comentarios
@@ -209,25 +166,107 @@ document.addEventListener("click", function (e) {
     const post = button.closest(".post");
     const postId = post.dataset.id;
 
-    fetch(`${apiUrlPublications}/${postId}/react`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ reaction }),
-    })
-      .then((response) => response.json())
-      .then((updatedPost) => {
-        console.log("Reacciones actualizadas:", updatedPost);
+    // Verificar si el usuario ya ha reaccionado a la publicación
+    const userId = 1; // Este valor debe ser dinámico según el usuario autenticado
+    checkUserReaction(postId, userId).then((existingReaction) => {
+      const reactionData = {
+        meGusta: false,
+        meEncanta: false,
+        noMeGusta: false,
+        publication: {
+          id: postId
+        },
+        user: {
+          id: userId
+        }
+      };
 
-        // Actualizar contadores en el DOM
-        post.querySelector(".like-count").textContent = `(${updatedPost.meGusta})`;
-        post.querySelector(".dislike-count").textContent = `(${updatedPost.noMeGusta})`;
-        post.querySelector(".love-count").textContent = `(${updatedPost.meEncanta})`;
-      })
-      .catch((error) => console.error("Error al actualizar reacciones:", error));
+      // Establecer la reacción según el botón presionado
+      if (reaction === "like") {
+        reactionData.meGusta = true;
+      } else if (reaction === "dislike") {
+        reactionData.noMeGusta = true;
+      } else if (reaction === "love") {
+        reactionData.meEncanta = true;
+      }
+
+      // Si el usuario ya reaccionó, actualizamos su reacción, si no, la creamos
+      if (existingReaction) {
+        updateReaction(existingReaction.id, reactionData);
+      } else {
+        createReaction(reactionData);
+      }
+    }).catch((error) => {
+      console.error("Error al verificar la reacción:", error);
+    });
   }
 });
+
+// Función para verificar si el usuario ya ha reaccionado a la publicación
+function checkUserReaction(postId, userId) {
+  return fetch(`${apiUrlReaccionSave}/usuario/${userId}/publicacion/${postId}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        return null; // No hay reacción previa
+      }
+    })
+    .catch(error => {
+      console.error("Error al verificar la reacción del usuario:", error);
+      return null;
+    });
+    
+}
+
+// Función para actualizar una reacción existente
+function updateReaction(reactionId, reactionData) {
+  fetch(`${apiUrlReaccionSave}/${reactionId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reactionData),
+  })
+    .then((response) => response.json())
+    .then((updatedReaction) => {
+      console.log("Reacción actualizada:", updatedReaction);
+      updateReactionCounts(updatedReaction);
+    })
+    .catch((error) => {
+      console.error("Error al actualizar la reacción:", error);
+    });
+}
+
+// Función para crear una nueva reacción
+function createReaction(reactionData) {
+  fetch(apiUrlReaccionSave, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reactionData),
+  })
+    .then((response) => response.json())
+    .then((newReaction) => {
+      console.log("Nueva reacción creada:", newReaction);
+      updateReactionCounts(newReaction);
+
+      window.location.reload();
+    })
+    .catch((error) => {
+      console.error("Error al crear la reacción:", error);
+    });
+}
+
+// Función para actualizar los contadores de reacciones en el DOM
+function updateReactionCounts(reactionData) {
+  const post = document.querySelector(`[data-id='${reactionData.publication.id}']`);
+  post.querySelector(".like-count").textContent = `(${reactionData.publication.meGusta})`;
+  post.querySelector(".dislike-count").textContent = `(${reactionData.publication.noMeGusta})`;
+  post.querySelector(".love-count").textContent = `(${reactionData.publication.meEncanta})`;
+}
+
 
 // Manejo del envío de nuevos comentarios
 document.addEventListener("submit", function (e) {
