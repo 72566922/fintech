@@ -16,6 +16,65 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `alumno`
+--
+
+DROP TABLE IF EXISTS `alumno`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `alumno` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `apellido` varchar(100) NOT NULL,
+  `celular` varchar(9) NOT NULL,
+  `correo` varchar(255) NOT NULL,
+  `dni` varchar(8) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UKgmjuky8o7hx4nbdhg8jvspy0k` (`correo`),
+  UNIQUE KEY `UKplf8ctke992i5j3vkkxyt80jc` (`dni`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `alumno`
+--
+
+LOCK TABLES `alumno` WRITE;
+/*!40000 ALTER TABLE `alumno` DISABLE KEYS */;
+INSERT INTO `alumno` VALUES (1,'morales arango','931474402','morales123@gmail.com','72566922','kevin juvenal'),(2,'gonzales tapia','956788435','gonzales123@gmail.com','56677745','julio cesar'),(3,'Pérez','987654321','juan@example.com','12345678','Juan Pérez'),(4,'tapia guzman','998876656','mario123@gmail.com','77742213','mario ricardo'),(5,'gutierrez castro','988554431','jairo123@gmail.com','75544233','jairo josue'),(6,'sanchez villa','998877678','sandra123@gmail.com','77445534','sandra maria'),(7,'martinez sanchez','989777567','jesus123@gmail.com','76669959','jesus adrian');
+/*!40000 ALTER TABLE `alumno` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `alumno_curso`
+--
+
+DROP TABLE IF EXISTS `alumno_curso`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `alumno_curso` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `alumno_id` bigint NOT NULL,
+  `curso_id` bigint NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKr44lwkj2g6xp76jg0p19dqqcw` (`alumno_id`),
+  KEY `FKowxkqfb2u3f989w71rflxqi86` (`curso_id`),
+  CONSTRAINT `FKowxkqfb2u3f989w71rflxqi86` FOREIGN KEY (`curso_id`) REFERENCES `curso` (`id`),
+  CONSTRAINT `FKr44lwkj2g6xp76jg0p19dqqcw` FOREIGN KEY (`alumno_id`) REFERENCES `alumno` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `alumno_curso`
+--
+
+LOCK TABLES `alumno_curso` WRITE;
+/*!40000 ALTER TABLE `alumno_curso` DISABLE KEYS */;
+INSERT INTO `alumno_curso` VALUES (1,1,2),(2,5,1),(3,7,2),(4,4,3);
+/*!40000 ALTER TABLE `alumno_curso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `comentario`
 --
 
@@ -43,6 +102,34 @@ LOCK TABLES `comentario` WRITE;
 /*!40000 ALTER TABLE `comentario` DISABLE KEYS */;
 INSERT INTO `comentario` VALUES (21,'aea',23,2),(22,'fff',23,2),(23,'bbb',23,2),(24,'yatusabebs',24,2),(25,'mmmmmm',25,2),(26,'vvv',26,2);
 /*!40000 ALTER TABLE `comentario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `curso`
+--
+
+DROP TABLE IF EXISTS `curso`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `curso` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(500) NOT NULL,
+  `modalidad` enum('PRESENCIAL','VIRTUAL') DEFAULT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `precio` double DEFAULT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `curso`
+--
+
+LOCK TABLES `curso` WRITE;
+/*!40000 ALTER TABLE `curso` DISABLE KEYS */;
+INSERT INTO `curso` VALUES (1,'descrubre como funciona blockchain','VIRTUAL','blockchain',0,'tecnologia'),(2,'aprende a manejar tus finanzas de manera efectiva','PRESENCIAL','finanzas personales',180.5,'economia'),(3,'el futuro que propone la inteligencia artificial','VIRTUAL','inteligencia artificial',0,'tecnologia');
+/*!40000 ALTER TABLE `curso` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -480,4 +567,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-24  8:56:35
+-- Dump completed on 2024-11-24 15:59:52

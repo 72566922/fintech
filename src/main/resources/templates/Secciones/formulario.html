@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción a Cursos - Fintech Formación</title>
+
+    <!-- Estilo específico para el Header -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/formulario.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="menu">
+            <img src="https://fintechperu.com/wp-content/uploads/2023/11/logo-fintech-peru-03.png" alt="Logo Fintech"
+                class="logo" />
+            <nav>
+                <ul class="menu-list">
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/eventos">Eventos</a></li>
+                    <li class="submenu">
+                        <a href="/publicaciones">Publicaciones</a>
+                        <ul class="submenu-list">
+                            <li><a href="/Secciones/comunidad.html#news">Publicar</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="/aceleradoras">Aceleradoras</a>
+                        <ul class="submenu-list">
+                            <li><a href="/Secciones/aceleradoras.html#inversionistas">Inversionistas</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="/concursos">Concursos</a>
+                        <ul class="submenu-list">
+                            <li><a href="/Secciones/concursos.html#formacion">Formación</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu"><a href="/cursos">Cursos</a></li>
+                    <li class="submenu"><a href="/noticias">Noticias</a></li>
+                </ul>
+            </nav>
+            <form class="search-form" id="searchForm">
+                <input type="text" placeholder="Buscar..." id="searchInput" />
+                <button type="submit">🔍</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <div class="portada-content">
+                <h1>Inscripción a Cursos</h1>
+                <p>Completa el formulario para inscribirte en nuestros cursos disponibles.</p>
+            </div>
+            <div class="form-container">
+                <h2>Formulario de Inscripción</h2>
+                <form id="registrationForm" action="/api/alumnos" method="POST">
+                    <label for="fullName">Nombre Completo:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Ingresa tu nombre completo" >
+
+                    <label for="dni">DNI:</label>
+                    <input type="text" id="dni" name="dni" placeholder="Ingresa tu DNI" >
+
+                    <label for="lastName">Apellido Completo:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Ingresa tu apellido completo"
+                        >
+
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo" >
+
+                    <label for="phone">Número de Celular:</label>
+                    <input type="text" id="phone" name="phone" placeholder="Ingresa tu número de celular" >
+
+                    <label for="course">Selecciona un Curso:</label>
+                    <select id="course" name="course" >
+                        <option value="">-- Selecciona un curso --</option>
+                    </select>
+
+                    <button type="submit">Inscribirse</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <ul>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#privacidad">Política de privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-social">
+            <div class="social-icons">
+                <a href="#"><img src="/img/L-redes/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="/img/L-redes/twitter.png" alt="Twitter"></a>
+                <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"
+                    alt="Instagram"></a>
+                <a href="#"><img src="./img/L-redes/linkedin.png" alt="LinkedIn"></a>
+            </div>
+            <p>&copy; 2024 Fintech Mujeres Perú. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="/Js/service/cursos/formulario.js"></script>
+</body>
+
+</html>

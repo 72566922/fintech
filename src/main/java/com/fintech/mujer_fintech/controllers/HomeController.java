@@ -47,4 +47,9 @@ public class HomeController {
         return "/Secciones/imagen";
     }
 
+    @GetMapping("/formulario")
+    public String mostrarFormulario() {
+        return "/Secciones/formulario";
+    }
+
 }
