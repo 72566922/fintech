@@ -32,7 +32,7 @@ CREATE TABLE `comentario` (
   KEY `FKsn53lyh11hoc4hlwohd0jh6e8` (`user_id`),
   CONSTRAINT `FKrm1kqaag6sc6t8qrq7vvvcjnt` FOREIGN KEY (`publicacion_id`) REFERENCES `publicaciones` (`id`),
   CONSTRAINT `FKsn53lyh11hoc4hlwohd0jh6e8` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `comentario` (
 
 LOCK TABLES `comentario` WRITE;
 /*!40000 ALTER TABLE `comentario` DISABLE KEYS */;
-INSERT INTO `comentario` VALUES (1,'si tienes razon',1,2),(2,'messirve',1,2),(3,'yatusabes',1,2),(4,'si quiero',4,2),(5,'estare ahi hoy',3,1),(6,'Excelente publicación',1,2),(7,'yaya esta bien',4,2),(8,'nop',5,2),(9,'aea',4,2),(10,'dsvvd',6,2),(11,'aea',7,2),(12,'wwww',7,2),(13,'nnnn',7,2),(14,'gggg',6,2),(15,'eeee',3,2),(16,'aea',19,2),(17,'gggf',12,2),(18,'zzzz',20,2),(19,'ggggaaaaaa',22,2);
+INSERT INTO `comentario` VALUES (21,'aea',23,2),(22,'fff',23,2),(23,'bbb',23,2),(24,'yatusabebs',24,2),(25,'mmmmmm',25,2),(26,'vvv',26,2);
 /*!40000 ALTER TABLE `comentario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +157,7 @@ CREATE TABLE `imagenes` (
   `nombre` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +166,7 @@ CREATE TABLE `imagenes` (
 
 LOCK TABLES `imagenes` WRITE;
 /*!40000 ALTER TABLE `imagenes` DISABLE KEYS */;
-INSERT INTO `imagenes` VALUES (1,'1f0eafd5-f9db-45f1-a6ce-1b0691db3da6_hospedajes.jpg','/img/publicaciones/1f0eafd5-f9db-45f1-a6ce-1b0691db3da6_hospedajes.jpg'),(2,'030de28c-d3ae-46f4-84c7-0858e70cb6f9_sodimac.jpg','/img/publicaciones/030de28c-d3ae-46f4-84c7-0858e70cb6f9_sodimac.jpg'),(3,'f2351db5-6ab1-45d2-b1e7-5a249da74f84_Captura.PNG','/img/publicaciones/f2351db5-6ab1-45d2-b1e7-5a249da74f84_Captura.PNG'),(4,'5ed9ef65-cd77-49c6-827d-8cddb6225ac6_colgador.PNG','/img/publicaciones/5ed9ef65-cd77-49c6-827d-8cddb6225ac6_colgador.PNG'),(5,'25d5f6de-c57e-437a-87f5-6299b854cb56_sodimac.jpg','/img/publicaciones/25d5f6de-c57e-437a-87f5-6299b854cb56_sodimac.jpg'),(6,'02ab096b-cb61-4c05-bb1a-022838a249b5_hogar.jpg','/img/publicaciones/02ab096b-cb61-4c05-bb1a-022838a249b5_hogar.jpg'),(7,'bcd7082e-1261-4184-9a46-236b8285d904_mayor-menor.jpg','/img/publicaciones/bcd7082e-1261-4184-9a46-236b8285d904_mayor-menor.jpg'),(8,'a8de11bf-5a62-4bde-85e2-1508adb2229c_mayor-menor.jpg','/img/publicaciones/a8de11bf-5a62-4bde-85e2-1508adb2229c_mayor-menor.jpg'),(9,'dbaca27d-cc46-4deb-9753-1c005602561c_mayor-menor.jpg','/img/publicaciones/dbaca27d-cc46-4deb-9753-1c005602561c_mayor-menor.jpg'),(10,'6adf7d7d-4004-428d-9a25-11c8844cd22b_Captura.PNG','/img/publicaciones/6adf7d7d-4004-428d-9a25-11c8844cd22b_Captura.PNG'),(11,'1b2034d8-5cdf-42d2-b53a-cd15e11b2715_hogar.jpg','/img/publicaciones/1b2034d8-5cdf-42d2-b53a-cd15e11b2715_hogar.jpg'),(12,'cd0cf315-ab81-4742-84c7-165d717254c7_hospedajes.jpg','/img/publicaciones/cd0cf315-ab81-4742-84c7-165d717254c7_hospedajes.jpg'),(13,'e51ec80a-8881-4263-bdac-3606b021652e_colgador.PNG','/img/publicaciones/e51ec80a-8881-4263-bdac-3606b021652e_colgador.PNG'),(14,'af806869-7645-4a71-ad66-5d92a2e407fa_Captura.PNG','/img/publicaciones/af806869-7645-4a71-ad66-5d92a2e407fa_Captura.PNG'),(15,'fd9e0450-f4e8-4840-972f-fe068cd1d361_sodimac.jpg','/img/publicaciones/fd9e0450-f4e8-4840-972f-fe068cd1d361_sodimac.jpg'),(16,'c3cd302f-dcfd-4c0c-b7a4-b54beb99387f_colgador.PNG','/img/publicaciones/c3cd302f-dcfd-4c0c-b7a4-b54beb99387f_colgador.PNG'),(17,'58476245-0e6e-4244-81e7-c5b6878b55b5_hospedajes.jpg','/img/publicaciones/58476245-0e6e-4244-81e7-c5b6878b55b5_hospedajes.jpg'),(18,'734fada3-8823-4959-845f-4331a1a81021_mayor-menor.jpg','/img/publicaciones/734fada3-8823-4959-845f-4331a1a81021_mayor-menor.jpg'),(19,'a15e9d2f-bba4-47ba-8485-1b5cb0592e46_sodimac.jpg','/img/publicaciones/a15e9d2f-bba4-47ba-8485-1b5cb0592e46_sodimac.jpg'),(20,'1a4b6992-cb00-4d81-af3d-b39159c24eea_hospedajes.jpg','/img/publicaciones/1a4b6992-cb00-4d81-af3d-b39159c24eea_hospedajes.jpg'),(21,'485cc9e9-a731-4ff4-9798-d1258886478d_hogar.jpg','/img/publicaciones/485cc9e9-a731-4ff4-9798-d1258886478d_hogar.jpg'),(22,'4dcfded0-a99f-40bb-a476-d0fbc6389ed1_sodimac.jpg','/img/publicaciones/4dcfded0-a99f-40bb-a476-d0fbc6389ed1_sodimac.jpg'),(23,'3df6d4a7-300f-49d5-8241-10e8d227062f_colgador.PNG','/img/publicaciones/3df6d4a7-300f-49d5-8241-10e8d227062f_colgador.PNG'),(24,'36080a8d-3083-4a2e-ac89-1e2cac90c1a4_hospedajes.jpg','/img/publicaciones/36080a8d-3083-4a2e-ac89-1e2cac90c1a4_hospedajes.jpg'),(25,'5bc6b4a1-897f-461f-bde8-a10431b97111_sodimac.jpg','/img/publicaciones/5bc6b4a1-897f-461f-bde8-a10431b97111_sodimac.jpg'),(26,'563e9acd-5f15-4963-a039-420fb0ca74ee_hogar.jpg','/img/publicaciones/563e9acd-5f15-4963-a039-420fb0ca74ee_hogar.jpg'),(27,'238d6ec5-99c6-45ae-8478-e0373ca33bf4_hospedajes.jpg','/img/publicaciones/238d6ec5-99c6-45ae-8478-e0373ca33bf4_hospedajes.jpg'),(28,'84a7232a-3b3b-4ff7-b2f8-6f414cfb08c5_sodimac.jpg','/img/publicaciones/84a7232a-3b3b-4ff7-b2f8-6f414cfb08c5_sodimac.jpg');
+INSERT INTO `imagenes` VALUES (1,'1f0eafd5-f9db-45f1-a6ce-1b0691db3da6_hospedajes.jpg','/img/publicaciones/1f0eafd5-f9db-45f1-a6ce-1b0691db3da6_hospedajes.jpg'),(2,'030de28c-d3ae-46f4-84c7-0858e70cb6f9_sodimac.jpg','/img/publicaciones/030de28c-d3ae-46f4-84c7-0858e70cb6f9_sodimac.jpg'),(3,'f2351db5-6ab1-45d2-b1e7-5a249da74f84_Captura.PNG','/img/publicaciones/f2351db5-6ab1-45d2-b1e7-5a249da74f84_Captura.PNG'),(4,'5ed9ef65-cd77-49c6-827d-8cddb6225ac6_colgador.PNG','/img/publicaciones/5ed9ef65-cd77-49c6-827d-8cddb6225ac6_colgador.PNG'),(5,'25d5f6de-c57e-437a-87f5-6299b854cb56_sodimac.jpg','/img/publicaciones/25d5f6de-c57e-437a-87f5-6299b854cb56_sodimac.jpg'),(6,'02ab096b-cb61-4c05-bb1a-022838a249b5_hogar.jpg','/img/publicaciones/02ab096b-cb61-4c05-bb1a-022838a249b5_hogar.jpg'),(7,'bcd7082e-1261-4184-9a46-236b8285d904_mayor-menor.jpg','/img/publicaciones/bcd7082e-1261-4184-9a46-236b8285d904_mayor-menor.jpg'),(8,'a8de11bf-5a62-4bde-85e2-1508adb2229c_mayor-menor.jpg','/img/publicaciones/a8de11bf-5a62-4bde-85e2-1508adb2229c_mayor-menor.jpg'),(9,'dbaca27d-cc46-4deb-9753-1c005602561c_mayor-menor.jpg','/img/publicaciones/dbaca27d-cc46-4deb-9753-1c005602561c_mayor-menor.jpg'),(10,'6adf7d7d-4004-428d-9a25-11c8844cd22b_Captura.PNG','/img/publicaciones/6adf7d7d-4004-428d-9a25-11c8844cd22b_Captura.PNG'),(11,'1b2034d8-5cdf-42d2-b53a-cd15e11b2715_hogar.jpg','/img/publicaciones/1b2034d8-5cdf-42d2-b53a-cd15e11b2715_hogar.jpg'),(12,'cd0cf315-ab81-4742-84c7-165d717254c7_hospedajes.jpg','/img/publicaciones/cd0cf315-ab81-4742-84c7-165d717254c7_hospedajes.jpg'),(13,'e51ec80a-8881-4263-bdac-3606b021652e_colgador.PNG','/img/publicaciones/e51ec80a-8881-4263-bdac-3606b021652e_colgador.PNG'),(14,'af806869-7645-4a71-ad66-5d92a2e407fa_Captura.PNG','/img/publicaciones/af806869-7645-4a71-ad66-5d92a2e407fa_Captura.PNG'),(15,'fd9e0450-f4e8-4840-972f-fe068cd1d361_sodimac.jpg','/img/publicaciones/fd9e0450-f4e8-4840-972f-fe068cd1d361_sodimac.jpg'),(16,'c3cd302f-dcfd-4c0c-b7a4-b54beb99387f_colgador.PNG','/img/publicaciones/c3cd302f-dcfd-4c0c-b7a4-b54beb99387f_colgador.PNG'),(17,'58476245-0e6e-4244-81e7-c5b6878b55b5_hospedajes.jpg','/img/publicaciones/58476245-0e6e-4244-81e7-c5b6878b55b5_hospedajes.jpg'),(18,'734fada3-8823-4959-845f-4331a1a81021_mayor-menor.jpg','/img/publicaciones/734fada3-8823-4959-845f-4331a1a81021_mayor-menor.jpg'),(19,'a15e9d2f-bba4-47ba-8485-1b5cb0592e46_sodimac.jpg','/img/publicaciones/a15e9d2f-bba4-47ba-8485-1b5cb0592e46_sodimac.jpg'),(20,'1a4b6992-cb00-4d81-af3d-b39159c24eea_hospedajes.jpg','/img/publicaciones/1a4b6992-cb00-4d81-af3d-b39159c24eea_hospedajes.jpg'),(21,'485cc9e9-a731-4ff4-9798-d1258886478d_hogar.jpg','/img/publicaciones/485cc9e9-a731-4ff4-9798-d1258886478d_hogar.jpg'),(22,'4dcfded0-a99f-40bb-a476-d0fbc6389ed1_sodimac.jpg','/img/publicaciones/4dcfded0-a99f-40bb-a476-d0fbc6389ed1_sodimac.jpg'),(23,'3df6d4a7-300f-49d5-8241-10e8d227062f_colgador.PNG','/img/publicaciones/3df6d4a7-300f-49d5-8241-10e8d227062f_colgador.PNG'),(24,'36080a8d-3083-4a2e-ac89-1e2cac90c1a4_hospedajes.jpg','/img/publicaciones/36080a8d-3083-4a2e-ac89-1e2cac90c1a4_hospedajes.jpg'),(25,'5bc6b4a1-897f-461f-bde8-a10431b97111_sodimac.jpg','/img/publicaciones/5bc6b4a1-897f-461f-bde8-a10431b97111_sodimac.jpg'),(26,'563e9acd-5f15-4963-a039-420fb0ca74ee_hogar.jpg','/img/publicaciones/563e9acd-5f15-4963-a039-420fb0ca74ee_hogar.jpg'),(27,'238d6ec5-99c6-45ae-8478-e0373ca33bf4_hospedajes.jpg','/img/publicaciones/238d6ec5-99c6-45ae-8478-e0373ca33bf4_hospedajes.jpg'),(28,'84a7232a-3b3b-4ff7-b2f8-6f414cfb08c5_sodimac.jpg','/img/publicaciones/84a7232a-3b3b-4ff7-b2f8-6f414cfb08c5_sodimac.jpg'),(29,'3f363ace-f73d-48fd-8d3c-83b10a5e06d1_hospedajes.jpg','/img/publicaciones/3f363ace-f73d-48fd-8d3c-83b10a5e06d1_hospedajes.jpg'),(30,'cbd1cfcc-5a12-44cc-a6e0-e8da3ce16b88_colgador.PNG','/img/publicaciones/cbd1cfcc-5a12-44cc-a6e0-e8da3ce16b88_colgador.PNG'),(31,'bf2ff2a8-9714-4fd2-9ec1-af4622339f63_hogar.jpg','/img/publicaciones/bf2ff2a8-9714-4fd2-9ec1-af4622339f63_hogar.jpg'),(32,'8a57beb2-c965-405e-8077-764d6c22232f_sodimac.jpg','/img/publicaciones/8a57beb2-c965-405e-8077-764d6c22232f_sodimac.jpg');
 /*!40000 ALTER TABLE `imagenes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,16 +267,16 @@ CREATE TABLE `publicaciones` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `user_id` bigint NOT NULL,
+  `image_id` bigint NOT NULL,
   `me_encanta` int NOT NULL,
   `me_gusta` int NOT NULL,
   `no_me_gusta` int NOT NULL,
-  `image_id` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK53hcyfh0s5ugnk70ma0js725v` (`user_id`),
   KEY `FKi4dscxi84gma9qtoq3s8r0ojn` (`image_id`),
   CONSTRAINT `FK53hcyfh0s5ugnk70ma0js725v` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `FKi4dscxi84gma9qtoq3s8r0ojn` FOREIGN KEY (`image_id`) REFERENCES `imagenes` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -285,7 +285,7 @@ CREATE TABLE `publicaciones` (
 
 LOCK TABLES `publicaciones` WRITE;
 /*!40000 ALTER TABLE `publicaciones` DISABLE KEYS */;
-INSERT INTO `publicaciones` VALUES (1,'Hola a todos',1,1,0,0,1),(2,'Mañana mejor',2,0,1,0,2),(3,'dia jueves',2,0,1,0,3),(4,'en el aire',1,0,1,0,4),(5,'sabatico',1,0,1,0,5),(6,'Título de la publicación',2,0,0,0,1),(7,'Título de la publicación',2,0,0,0,1),(8,'cvvvv',2,0,0,0,14),(9,'qllll',2,0,0,0,15),(10,'dddd',2,0,0,0,16),(11,'hbhb',2,0,0,0,17),(12,'ccccc',2,0,0,0,18),(13,'nnnnn',2,0,0,0,19),(14,'bnbnnbn',2,0,0,0,20),(15,'nbnn',2,0,0,0,21),(16,'wewewe',2,0,0,0,22),(17,'aaa',2,0,0,0,23),(18,'fgfg',2,0,0,0,24),(19,'fh',2,0,0,0,25),(20,'bvvcc',2,0,0,0,26),(21,'kmkmk',2,0,0,0,27),(22,'kkkk',2,0,0,0,28);
+INSERT INTO `publicaciones` VALUES (23,'Bienvenidos',2,29,1,1,1),(24,'wwww',2,30,1,0,0),(25,'agagaga',2,31,2,2,1),(26,'frfrfr',2,32,3,3,2);
 /*!40000 ALTER TABLE `publicaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,7 +308,7 @@ CREATE TABLE `reacciones` (
   KEY `FKavuoylox6ljij4l0b06yqfh12` (`user_id`),
   CONSTRAINT `FKavuoylox6ljij4l0b06yqfh12` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `FKl6axl5df334q90ntnu4qaiex3` FOREIGN KEY (`publication_id`) REFERENCES `publicaciones` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -317,6 +317,7 @@ CREATE TABLE `reacciones` (
 
 LOCK TABLES `reacciones` WRITE;
 /*!40000 ALTER TABLE `reacciones` DISABLE KEYS */;
+INSERT INTO `reacciones` VALUES (9,_binary '',_binary '\0',_binary '\0',23,2),(10,_binary '\0',_binary '',_binary '\0',23,1),(11,_binary '\0',_binary '\0',_binary '',23,1),(12,_binary '',_binary '\0',_binary '\0',26,1),(13,_binary '\0',_binary '\0',_binary '',25,1),(14,_binary '',_binary '\0',_binary '\0',25,1),(15,_binary '\0',_binary '',_binary '\0',25,1),(16,_binary '',_binary '\0',_binary '\0',26,1),(17,_binary '\0',_binary '',_binary '\0',26,1),(18,_binary '\0',_binary '\0',_binary '',26,1),(19,_binary '\0',_binary '\0',_binary '',26,1),(20,_binary '',_binary '\0',_binary '\0',24,1),(21,_binary '\0',_binary '',_binary '\0',26,1),(22,_binary '\0',_binary '',_binary '\0',25,1),(23,_binary '',_binary '\0',_binary '\0',25,1),(24,_binary '\0',_binary '',_binary '\0',26,1),(25,_binary '',_binary '\0',_binary '\0',26,1);
 /*!40000 ALTER TABLE `reacciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -479,4 +480,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-22 22:00:34
+-- Dump completed on 2024-11-24  8:56:35
