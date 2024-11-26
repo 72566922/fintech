@@ -52,4 +52,13 @@ public class HomeController {
         return "/Secciones/formulario";
     }
 
+    @GetMapping("/proximos")
+    public String mostrarProximos() {
+        return "/Secciones/formacion-concursos/proximos";
+    }
+    @GetMapping("/formacion")
+    public String mostrarFormacion() {
+        return "/Secciones/formacion-concursos/formacion";
+    }
+
 }
