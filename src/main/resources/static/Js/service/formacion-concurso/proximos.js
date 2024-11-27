@@ -43,7 +43,7 @@ async function renderFormacionConcurso() {
 
             // Crear el botón para más detalles
             const detailsButton = document.createElement("button");
-            detailsButton.textContent = "Más detalles";
+            detailsButton.textContent = "Ir a";
             detailsButton.classList.add("details-button");
             detailsButton.onclick = () => {
                 window.open(evento.url, "_blank"); // Abrir el enlace del evento en una nueva pestaña

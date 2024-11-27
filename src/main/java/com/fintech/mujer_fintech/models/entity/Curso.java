@@ -1,7 +1,8 @@
 package com.fintech.mujer_fintech.models.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "curso")
@@ -11,21 +12,15 @@ public class Curso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    @NotNull
-    @Size(min = 1, max = 255)
-    private String nombre;
-
-    @Column(nullable = false, length = 500)
-    @NotNull
-    @Size(min = 1, max = 500)
-    private String descripcion;
-
-    @PositiveOrZero
+    private String iniciativa;
+    private String organizador;
     private Double precio;
 
-    @Column(length = 50)
-    private String type;
+    @Column(name = "fecha_inicio")
+    private LocalDate fechaInicio;
+
+    private String estado;
+    private String url;
 
     @Enumerated(EnumType.STRING)
     private Modalidad modalidad;
@@ -35,53 +30,83 @@ public class Curso {
         PRESENCIAL, VIRTUAL
     }
 
+
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+
+    public String getIniciativa() {
+        return iniciativa;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+
+    public void setIniciativa(String iniciativa) {
+        this.iniciativa = iniciativa;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+
+    public String getOrganizador() {
+        return organizador;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+
+    public void setOrganizador(String organizador) {
+        this.organizador = organizador;
     }
 
     public Double getPrecio() {
         return precio;
     }
 
+
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
 
-    public String getType() {
-        return type;
+
+    public LocalDate getFechaInicio() {
+        return fechaInicio;
     }
 
-    public void setType(String type) {
-        this.type = type;
+
+    public void setFechaInicio(LocalDate fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+
+    public String getUrl() {
+        return url;
+    }
+
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
 
     public Modalidad getModalidad() {
         return modalidad;
     }
 
+
     public void setModalidad(Modalidad modalidad) {
         this.modalidad = modalidad;
     }
 
-    // Getters, setters, equals, hashCode, toString
+    
 }

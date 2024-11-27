@@ -86,9 +86,6 @@ function subirImagenYPublicacion(event) {
     });
 }
 
-
-
-
 // Cargar publicaciones y comentarios
 document.addEventListener("DOMContentLoaded", function () {
   fetch(apiUrlPublications)
