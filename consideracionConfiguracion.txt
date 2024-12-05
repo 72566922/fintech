@@ -1,0 +1,8 @@
+Modificar el archivo "WebConfig.java"--
+exactamente en la linea 
+.addResourceLocations("file:" + "C:/Users/Morales/Desktop/fintechCertus/mujer_fintech/src/main/resources/static/img/publicaciones/");
+
+
+tambien modificar en el archivo .properties en la linea
+
+ruta.imagenes=C:/Users/Morales/Desktop/fintechCertus/mujer_fintech/src/main/resources/static/img/publicaciones
